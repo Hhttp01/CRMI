@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* אפשר להוסיף עיצוב בסיסי כאן */
 body {
   font-family: Arial, sans-serif;
 }
