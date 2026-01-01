@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import Customers from "./Customers";
+import ClientForm from "./components/ClientForm";
+import ClientList from "./components/ClientList";
 
 function App() {
+  const [clients, setClients] = useState([]);
+
+  const addClient = (client) => {
+    setClients([...clients, client]);
+  };
+
   return (
-    <div className="p-5">
-      <h1 className="text-3xl font-bold text-center mb-5">מערכת CRM + חשבוניות</h1>
-      <Customers />
+    <div className="p-4 max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">חשבוניות + CRM</h1>
+      <ClientForm addClient={addClient} />
+      <ClientList clients={clients} />
     </div>
   );
 }
